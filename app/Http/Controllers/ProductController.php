@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Image;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -39,13 +41,26 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'name' => 'required',
             'description' => 'required',
-            'image' => 'required',
             'price' => 'required'
         ]);
 
-        Product::create($request->all());
+
+        // Creating product with specified parameters
+        // Not using Product::Create due to inability to correctly upload image to the DB
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $filename = time() . '.' . $image->getClientOriginalExtension();
+          Image::make($image)->resize(150,150)->save( public_path('/images/public_images'. $filename));
+          $product->image = $filename;
+          $product->save();
+        }
 
         return redirect()->route('products.index')
                         ->with('success','Product created successfully.');
@@ -83,10 +98,9 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image' => 'required',
-            'price' => 'required'
+          'name' => 'required',
+          'description' => 'required',
+          'price' => 'required'
         ]);
 
         $product->update($request->all());

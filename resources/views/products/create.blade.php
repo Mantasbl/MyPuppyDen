@@ -23,6 +23,7 @@
     </div>
 @endif
 
+<!--
 <form action="{{ route('products.store') }}" method="POST">
     @csrf
 
@@ -43,6 +44,64 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
+
+</form>
+-->
+<form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+  @csrf
+  <div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Product Name" name="name">
+  </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Description</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Product Description" name="description"></textarea>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Price</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" type="number" name="price" placeholder="0.00" step="0.01" min="0">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+    <!--<p class="help is-success">This username is available</p>  -->
+  </div>
+
+  <div class="file has-name">
+    <label class="file-label">
+      <input class="file-input" type="file" name="image">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+      <span class="file-name">
+        Screen Shot 2017-07-29 at 15.54.25.png
+      </span>
+    </label>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-text">Cancel</button>
+    </div>
+  </div>
 
 </form>
 @endsection
