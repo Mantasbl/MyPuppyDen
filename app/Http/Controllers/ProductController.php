@@ -6,17 +6,39 @@ use App\Product;
 use Illuminate\Http\Request;
 use Image;
 use Storage;
+use User;
+use Auth;
+use authAdminController;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+
+      //https://stackoverflow.com/questions/45055618/laravel-5-4-cant-access-authuser-in-the-construct-method
+      //Admin authorization, can use product CRUD only if its an admin user
+      $this->middleware('auth')->except(['']);
+      $this->middleware(function ($request, $next) {
+        $this->user = Auth::user();
+        return $next($request);
+      });
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         $products = Product::latest()->paginate(5);
+
 
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -29,6 +51,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         return view('products.create');
     }
 
@@ -40,6 +65,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -54,14 +82,14 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
 
+        //Image upload section
         if ($request->hasFile('image')) {
           $image = $request->file('image');
           $filename = time() . '.' . $image->getClientOriginalExtension();
           Image::make($image)->resize(150,150)->save( public_path('/images/public_images'. $filename));
           $product->image = $filename;
-          $product->save();
         }
-
+        $product->save();
         return redirect()->route('products.index')
                         ->with('success','Product created successfully.');
     }
@@ -74,6 +102,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         return view('products.show',compact('product'));
     }
 
@@ -85,6 +116,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         return view('products.edit',compact('product'));
     }
 
@@ -97,6 +131,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         $request->validate([
           'name' => 'required',
           'description' => 'required',
@@ -117,6 +154,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if ($this->user->isAdmin !=1) {
+          abort(403);
+        }
         $product->delete();
 
         return redirect()->route('products.index')
