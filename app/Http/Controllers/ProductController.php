@@ -34,9 +34,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        if ($this->user->isAdmin !=1) {
-          abort(403);
-        }
+
         $products = Product::latest()->paginate(5);
 
 

@@ -6,9 +6,11 @@
             <div class="pull-left">
                 <h2>Products</h2>
             </div>
+            @if (Auth::user()->isAdmin !=0)
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
             </div>
+            @endif
         </div>
     </div>
 
