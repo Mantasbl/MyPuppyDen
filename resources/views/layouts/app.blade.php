@@ -12,13 +12,14 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
     <body>
         <div id="app">
             <nav class="navbar has-shadow">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a href="{{ url('/') }}" class="navbar-item">{{ config('app.name', 'Laravel') }}</a>
+                        <a href="{{ url('/') }}" class="navbar-item"><img src="/images/public_site_images/mypuppyden_logo.png"></a>
 
                         <div class="navbar-burger burger" data-target="navMenu">
                             <span></span>
@@ -39,6 +40,9 @@
                                     <a class="navbar-link" href="#">{{ Auth::user()->name }}</a>
 
                                     <div class="navbar-dropdown">
+                                        <a class="navbar-item" href="{{ route('profile') }}">
+                                            Profile
+                                        </a>
                                         <a class="navbar-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                             Logout

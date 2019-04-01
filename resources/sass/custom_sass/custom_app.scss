@@ -1,0 +1,19 @@
+//IMPORT ALL SASS DIRECTORY FILES
+
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "0-plugins/_plugins-dir";
+@import "1-base/_base-dir";
+@import "2-layouts/_layouts-dir";
+@import "3-modules/_modules-dir";
+
+//MIXINS
+
+//STYLES
+nav a {
+  color: $dark-font;
+}
+nav a:hover {
+  text-decoration: none;
+  color: lighten($dark-font, 30%);
+}

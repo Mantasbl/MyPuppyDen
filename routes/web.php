@@ -11,16 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::resource('products','ProductController');
 
-Route::get('profile', 'UserController@profile')->middleware('auth');
+Route::get('/profile', 'UserController@profile')->middleware('auth')->name('profile');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cart', 'CartController@index')->name('cart.index');

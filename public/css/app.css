@@ -21306,3 +21306,24 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   }
 }
 
+/* VARIABLES */
+
+/* MIXINS */
+
+/* PLUGINS */
+
+/* BASE */
+
+/* LAYOUTS */
+
+/* MODULES */
+
+nav a {
+  color: #332d2d;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #847575;
+}
+

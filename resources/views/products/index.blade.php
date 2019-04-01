@@ -1,4 +1,4 @@
-@extends('products.layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -34,7 +34,7 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->description }}</td>
             <td>{{ $product->price }} &#163;</td>
-            <td><img src="/images/public_images{{$product->image}}"></td>
+            <td><img src="/images/product_images/{{$product->image}}"></td>
 
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
