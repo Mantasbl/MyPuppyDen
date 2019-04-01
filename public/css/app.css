@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
+/* VARIABLES */
+
+/* MIXINS */
+
+/* PLUGINS */
+
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 
 /* modified path import of other modules */
@@ -21306,17 +21312,32 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   }
 }
 
-/* VARIABLES */
-
-/* MIXINS */
-
-/* PLUGINS */
-
 /* BASE */
 
 /* LAYOUTS */
 
+.navbar-start {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-brand-logo {
+  padding: 0 0.75rem 0.25rem 0.75rem;
+}
+
+.nav-brand-logo img {
+  max-height: 3rem;
+}
+
 /* MODULES */
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/public_site_images/hero_body_dog.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 nav a {
   color: #332d2d;

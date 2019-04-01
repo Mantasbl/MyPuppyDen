@@ -1,0 +1,12 @@
+//Aligning nav start section to the middle
+.navbar-start {
+  flex-grow: 1;
+  justify-content:
+  center;
+}
+.nav-brand-logo {
+  padding: 0 0.75rem 0.25rem 0.75rem;
+}
+.nav-brand-logo img {
+  max-height: 3rem;
+}
