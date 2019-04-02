@@ -1,57 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Products</h2>
-            </div>
-            @if (Auth::user()->isAdmin !=0)
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-            </div>
-            @endif
-        </div>
-    </div>
-
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
+    <section id="hero-shop" class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered">
+            Shop
+          </h1>
+          <h2 class="subtitle has-text-centered">
+            Browse our finest selection
+          </h2>
+        </div>
+      </div>
+    </section>
 
-    <table class="table table-bordered">
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th width="280px">Image</th>
-        </tr>
-        @foreach ($products as $product)
-        <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $product->name }}</td>
-            <td>{{ $product->description }}</td>
-            <td>{{ $product->price }} &#163;</td>
-            <td><img src="/images/product_images/{{$product->image}}"></td>
+    <section class="section">
+      <div class="columns is-marginless is-centered">
+        <div class="columns column is-9-desktop is-11-tablet is-centered is-marginless is-multiline is-mobile">
+          @foreach ($products as $product)
+            <div class="box column is-5-mobile is-2-desktop is-4-tablet product-column">
+              <a href="{{ route('products.show',$product->id) }}">
+                <img src="/images/product_images/{{$product->image}}" alt="Product image">
+                <h1 class="product-name"><strong>{{ $product->name }}</strong></h1>
+                <p class="product-description">{{ $product->description }}</p>
+                <p class="product-price">{{ $product->price }} &#163;</p>
+              </a>
+              @if (Auth::user()->isAdmin !=0)
+              <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                  <a class="button is-info" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="button is-danger">Delete</button>
+              </form>
+              @endif
+            </div>
 
-            <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+            @endforeach
+          </div>
+      </div>
+    </section>
 
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+    @if (Auth::user()->isAdmin !=0)
+        <a class="button product-create is-warning" href="{{ route('products.create') }}"> Create New Product</a>
+    @endif
 
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
 
-                    @csrf
-                    @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
 
     {!! $products->links() !!}
 

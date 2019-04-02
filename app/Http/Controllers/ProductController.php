@@ -9,6 +9,7 @@ use Storage;
 use User;
 use Auth;
 use authAdminController;
+use Web;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,7 @@ class ProductController extends Controller
 
       //https://stackoverflow.com/questions/45055618/laravel-5-4-cant-access-authuser-in-the-construct-method
       //Admin authorization, can use product CRUD only if its an admin user
-      $this->middleware('auth')->except(['']);
+      $this->middleware('auth')->except(['shop']);
       $this->middleware(function ($request, $next) {
         $this->user = Auth::user();
         return $next($request);
@@ -31,6 +32,13 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function shop() {
+      $products = Product::latest()->paginate(5);
+
+
+      return view('products.shop',compact('products'))
+          ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
     public function index()
     {
@@ -84,7 +92,7 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
           $image = $request->file('image');
           $filename = time() . '.' . $image->getClientOriginalExtension();
-          Image::make($image)->resize(150,150)->save( public_path('/images/product_images/'. $filename));
+          Image::make($image)->/*resize(150,150)->*/save( public_path('/images/product_images/'. $filename));
           $product->image = $filename;
         }
         $product->save();

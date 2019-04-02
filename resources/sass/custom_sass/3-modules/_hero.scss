@@ -1,7 +1,15 @@
-.hero {
+.hero-home {
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/public_site_images/hero_body_dog.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.hero-title, .hero-subtitle {
+  color: #fff;
+}
+#hero-shop {
+  background: rgb(32,156,238);
+  background: linear-gradient(90deg, rgba(32,156,238,1) 50%, rgba(255,255,255,1) 100%);
 }

@@ -34,10 +34,14 @@
                 <a href="{{ route('home')}}" class="navbar-item">
                   Home
                 </a>
+                <!-- If this is accessed by admin, will be directed to view with products CRUD -->
+                <a href="@if (Auth::guest() || Auth::user()->isAdmin !=1)
+                          {{route('shop')}}
+                         @else
+                           {{route('products.index')}}
+                         @endif" class="navbar-item">Shop</a>
 
-                <a href="{{ route('products.index') }}" class="navbar-item">
-                  Shop
-                </a>
+
 
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
@@ -64,9 +68,12 @@
 
               <div class="navbar-end">
                 <div class="navbar-item">
+                  <a href="#"><i class=" cart fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="navbar-item logged-in-nav">
                   <div class="buttons">
                     @if (Auth::guest())
-                        <a class="button is-primary " href="{{ route('login') }}">Login</a>
+                        <a class="button is-info " href="{{ route('login') }}">Login</a>
                         <a class="button is-light " href="{{ route('register') }}">Register</a>
                     @else
                     <div class="navbar-item has-dropdown is-hoverable">

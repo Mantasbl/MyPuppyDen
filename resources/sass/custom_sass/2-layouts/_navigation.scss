@@ -4,9 +4,22 @@
   justify-content:
   center;
 }
+//
 .nav-brand-logo {
   padding: 0 0.75rem 0.25rem 0.75rem;
 }
 .nav-brand-logo img {
   max-height: 3rem;
+}
+
+.navbar a:hover, .cart:hover {
+  color: #209cee;
+}
+
+.cart {
+  color: #4a4a4a;
+}
+
+.logged-in-nav {
+  padding-bottom: 0.75rem;
 }
