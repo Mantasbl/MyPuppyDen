@@ -1,6 +1,7 @@
 <section id="hero-shop" class="hero is-medium is-primary is-bold">
   <div class="hero-body">
     <div class="container">
+      <!--Has different routes and link text depending on whether its an admin or user/guest looking at it-->
       <h1 class="title has-text-centered">
         @if (Route::current()->getName() == "shop")
           Shop

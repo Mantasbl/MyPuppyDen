@@ -21360,6 +21360,7 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 #hero-shop {
   background: #209cee;
   background: linear-gradient(90deg, #209cee 50%, white 100%);
+  margin-bottom: 3rem;
 }
 
 .product-column a {

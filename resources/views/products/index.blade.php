@@ -41,5 +41,5 @@
 
 
     {!! $products->links() !!}
-
+    
 @endsection

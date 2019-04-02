@@ -33,21 +33,21 @@ class ProductController extends Controller
      */
 
     public function shop() {
-      $products = Product::latest()->paginate(5);
+      $products = Product::latest()->paginate(20);
 
 
       return view('products.shop',compact('products'))
-          ->with('i', (request()->input('page', 1) - 1) * 5);
+          ->with('i', (request()->input('page', 1) - 1) * 20);
     }
 
     public function index()
     {
 
-        $products = Product::latest()->paginate(5);
+        $products = Product::latest()->paginate(20);
 
 
         return view('products.index',compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 20);
     }
 
     /**

@@ -39,7 +39,13 @@
                           {{route('shop')}}
                          @else
                            {{route('products.index')}}
-                         @endif" class="navbar-item">Shop</a>
+                         @endif" class="navbar-item">
+                        @if (Auth::guest() || Auth::user()->isAdmin !=1)
+                           Shop
+                        @else
+                           Products
+                        @endif
+                </a>
 
 
 

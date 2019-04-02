@@ -1,14 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Products</h2>
-            </div>
-        </div>
-    </div>
-
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
@@ -17,11 +9,6 @@
     @include('products.products-shop-hero')
 
     <section class="section">
-      <div class="container is-fullhd">
-      <div class="notification">
-        This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
-      </div>
-      </div>
       <div class="columns is-marginless is-centered">
         <div class="columns column is-9-desktop is-11-tablet is-centered is-marginless is-multiline is-mobile">
           @foreach ($products as $product)
