@@ -6,19 +6,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <section id="hero-shop" class="hero is-medium is-primary is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title has-text-centered">
-            Shop
-          </h1>
-          <h2 class="subtitle has-text-centered">
-            Browse our finest selection
-          </h2>
-        </div>
-      </div>
-    </section>
-
+    @include('products.products-shop-hero')
     <section class="section">
       <div class="columns is-marginless is-centered">
         <div class="columns column is-9-desktop is-11-tablet is-centered is-marginless is-multiline is-mobile">

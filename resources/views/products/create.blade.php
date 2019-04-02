@@ -1,16 +1,6 @@
-@extends('products.layout')
+@extends('layouts.app')
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New Product</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -47,6 +37,8 @@
 
 </form>
 -->
+@include('products.products-shop-hero')
+
 <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="field">
@@ -102,6 +94,7 @@
       <button class="button is-text">Cancel</button>
     </div>
   </div>
-
 </form>
+<a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+
 @endsection
