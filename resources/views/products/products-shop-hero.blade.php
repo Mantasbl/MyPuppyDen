@@ -9,6 +9,8 @@
           Product Management
         @elseif (Route::current()->getName() == "products.create")
           Create new Product
+        @elseif (Route::current()->getName() =="products.edit")
+          Edit Product
         @endif
 
       </h1>
