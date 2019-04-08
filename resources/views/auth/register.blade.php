@@ -1,15 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Register
-                </h1>
-            </div>
-        </div>
-    </section>
+
+@include('layouts.products-shop-hero')
+
 
     <div class="columns is-marginless is-centered">
         <div class="column is-5">
@@ -106,7 +100,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Register</button>
+                                        <button type="submit" class="button is-info">Register</button>
                                     </div>
                                 </div>
                             </div>

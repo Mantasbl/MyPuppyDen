@@ -13,7 +13,7 @@
     </div>
 @endif
 
-@include('products.products-shop-hero')
+@include('layouts.products-shop-hero')
 
 <div class="columns is-centered">
   <div class="column is-5 is-centered">

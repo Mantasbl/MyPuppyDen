@@ -19,7 +19,7 @@ class ProductController extends Controller
 
       //https://stackoverflow.com/questions/45055618/laravel-5-4-cant-access-authuser-in-the-construct-method
       //Admin authorization, can use product CRUD only if its an admin user
-      $this->middleware('auth')->except(['shop']);
+      $this->middleware('auth')->except(['shop', 'show']);
       $this->middleware(function ($request, $next) {
         $this->user = Auth::user();
         return $next($request);
@@ -87,6 +87,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
+        $product->material = $request->material;
 
         //Image upload section
         if ($request->hasFile('image')) {
@@ -108,9 +109,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        if ($this->user->isAdmin !=1) {
-          abort(403);
-        }
         return view('products.show',compact('product'));
     }
 

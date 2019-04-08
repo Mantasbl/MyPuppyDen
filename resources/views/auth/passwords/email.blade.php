@@ -3,15 +3,16 @@
 @section('content')
 
 
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Reset Password
-                </h1>
-            </div>
-        </div>
-    </section>
+<section id="hero-shop" class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered">
+        Reset Password
+      </h1>
+    </div>
+  </div>
+</section>
+
 
     <div class="columns is-marginless is-centered">
         <div class="column is-5">
@@ -58,7 +59,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Send Password Reset Link
+                                        <button type="submit" class="button is-info">Send Password Reset Link
                                         </button>
                                     </div>
                                 </div>

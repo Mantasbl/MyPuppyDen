@@ -13,7 +13,7 @@
     </div>
 @endif
 
-@include('products.products-shop-hero')
+@include('layouts.products-shop-hero')
 
 <div class="columns is-centered">
   <div class="column is-5 is-centered">
@@ -46,9 +46,16 @@
       </div>
     </div>
 
+    <div class="field">
+      <label class="label">Material (optional)</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Product Material" name="material"></textarea>
+      </div>
+    </div>
+
     <div class="file has-name field is-horizontal">
       <div class="field">
-        <label class="label">Image</label>
+        <label class="label">Image (optional)</label>
         <label class="file-label">
           <input class="file-input" type="file" name="image">
           <span class="file-cta">

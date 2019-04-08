@@ -9,8 +9,14 @@
           Product Management
         @elseif (Route::current()->getName() == "products.create")
           Create new Product
-        @elseif (Route::current()->getName() =="products.edit")
+        @elseif (Route::current()->getName() == "products.edit")
           Edit Product
+        @elseif (Route::current()->getName() == "login")
+          Login
+        @elseif (Route::current()->getName() == "register")
+          Register
+        @elseif (Route::current()->getName() == "products.show")
+          {{ $product->name }}
         @endif
 
       </h1>

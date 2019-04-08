@@ -2,15 +2,6 @@
 
 @section('content')
 
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Reset Password
-                </h1>
-            </div>
-        </div>
-    </section>
 
 
     <div class="columns is-marginless is-centered">
@@ -27,7 +18,7 @@
                         </div>
                     @endif
 
-                    <form class="password-reset-form" method="POST" action="{{ route('password.request') }}">
+                    <form class="password-reset-form"  method="POST" action="{{ route('password.request') }}">
 
                         {{ csrf_field() }}
 
@@ -97,7 +88,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Reset Password </button>
+                                        <button type="submit" class="button is-info">Reset Password </button>
                                     </div>
                                 </div>
                             </div>
