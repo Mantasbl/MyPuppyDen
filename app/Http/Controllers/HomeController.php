@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at','desc')->take(4)->get();
-
-        return view('home',compact('products'));
+        $featuredproduct = Product::where('isFeatured', 1)->take(1)->get();
+        return view('home',compact('products', 'featuredproduct'));
     }
 }

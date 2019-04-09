@@ -21380,7 +21380,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   color: #209cee;
 }
 
-.product-price-index strike {
+.product-price-index strike,
+.product-price-show strike {
   color: #4a4a4a;
 }
 
@@ -21390,8 +21391,10 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   right: 5%;
 }
 
-.product-description-show {
-  margin-top: 20%;
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-description-index,

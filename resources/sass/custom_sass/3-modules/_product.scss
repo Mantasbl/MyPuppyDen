@@ -14,7 +14,7 @@
   color: #209cee;
 }
 
-.product-price-index strike {
+.product-price-index strike, .product-price-show strike {
   color: #4a4a4a;
 }
 
@@ -25,8 +25,10 @@
   right: 5%;
 }
 
-.product-description-show {
-  margin-top:20%;
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-description-index, .product-material-index {

@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('image')->default("");
             $table->float('price');
             $table->text('material');
+            $table->boolean('isFeatured')->default(0);
             $table->timestamps();
         });
     }

@@ -15,12 +15,22 @@
         </div>
       </div>
     </section>
-    <!-- Header  section -->
+    <!-- Featured item section -->
+    <section class="section has-text-centered">
+      <div class="container">
+        <h1 class="title">Featured Product</h1>
+      </div>
+    </section>
+    @foreach ($featuredproduct as $product)
+    @include('layouts.products-show')
+    @endforeach
+
+    <!-- Newest Additions section -->
     <section class="section has-text-centered">
       <div class="container">
         <h1 class="title">Newest Additions</h1>
       </div>
     </section>
-    <!-- Newest Additions section -->
     @include('layouts.products-display')
+
 @endsection

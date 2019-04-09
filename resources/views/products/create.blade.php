@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('layouts.products-shop-hero')
+
 @if ($errors->any())
     <div class="columns is-centered">
       <div class="column is-8">
@@ -17,9 +19,6 @@
       </div>
     </div>
 @endif
-
-@include('layouts.products-shop-hero')
-
 <div class="columns is-centered">
   <div class="column is-5 is-centered">
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
