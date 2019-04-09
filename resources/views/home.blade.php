@@ -15,12 +15,12 @@
         </div>
       </div>
     </section>
-    <div class="container">
-
-      <div class="columns is-marginless is-centered">
-        <div class="column is-7">
-
-        </div>
+    <!-- Header  section -->
+    <section class="section has-text-centered">
+      <div class="container">
+        <h1 class="title">Newest Additions</h1>
       </div>
-    </div>
+    </section>
+    <!-- Newest Additions section -->
+    @include('layouts.products-display')
 @endsection

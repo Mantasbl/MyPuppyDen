@@ -21375,8 +21375,13 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   margin: 1rem !important;
 }
 
-.product-price {
+.product-price-show,
+.product-price-index {
   color: #209cee;
+}
+
+.product-price-index strike {
+  color: #4a4a4a;
 }
 
 .product-create {
@@ -21385,12 +21390,22 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   right: 5%;
 }
 
+.product-description-show {
+  margin-top: 20%;
+}
+
+.product-description-index,
+.product-material-index {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
-  .product-name {
+  .product-name-index {
     font-size: 0.85rem;
   }
 
-  .product-description {
+  .product-description-show,
+  .product-description-index {
     font-size: 0.75rem;
   }
 }

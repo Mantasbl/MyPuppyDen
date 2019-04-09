@@ -3,13 +3,18 @@
 @section('content')
 
 @if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="notification is-danger">
+          <button class="delete"></button>
+          <strong>Whoops!</strong> There were some problems with your input.<br><br>
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div>
+      </div>
     </div>
 @endif
 
