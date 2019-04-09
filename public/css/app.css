@@ -21395,3 +21395,11 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   }
 }
 
+.container {
+  margin-top: 30px;
+}
+
+.is-hidden {
+  display: none;
+}
+
