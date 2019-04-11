@@ -21402,14 +21402,19 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   display: none;
 }
 
+.product-price-show {
+  margin-top: -1rem;
+  margin-bottom: 0.75rem;
+}
+
 @media only screen and (max-width: 768px) {
   .product-name-index {
     font-size: 0.85rem;
   }
 
   .product-description-show,
-  .product-description-index {
-    font-size: 0.75rem;
+  .product-material-show {
+    display: none;
   }
 }
 
@@ -21419,5 +21424,24 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 
 .is-hidden {
   display: none;
+}
+
+#add-to-cart-show a {
+  color: #209cee;
+  border: 1px solid #209cee;
+}
+
+#add-to-cart-show a,
+#buy-it-now-show a {
+  width: 100%;
+}
+
+#add-to-cart-show,
+#buy-it-now-show {
+  padding: 0.25rem;
+}
+
+#add-to-cart-display i {
+  font-size: 2rem;
 }
 

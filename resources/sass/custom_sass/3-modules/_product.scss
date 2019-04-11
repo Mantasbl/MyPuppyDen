@@ -35,12 +35,17 @@
     display: none;
 }
 
+.product-price-show {
+  margin-top: -1rem;
+  margin-bottom: 0.75rem;
+}
+
 @media only screen and (max-width: 768px) {
   .product-name-index {
     font-size: 0.85rem;
   }
-  .product-description-show, .product-description-index {
-    font-size: 0.75rem;
+  .product-description-show, .product-material-show{
+    display:none;
   }
 
 }

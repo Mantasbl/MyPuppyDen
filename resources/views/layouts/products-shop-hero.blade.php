@@ -15,8 +15,6 @@
           Login
         @elseif (Route::current()->getName() == "register")
           Register
-        @elseif (Route::current()->getName() == "products.show")
-          {{ $product->name }}
         @endif
 
       </h1>

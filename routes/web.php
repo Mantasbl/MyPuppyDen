@@ -13,6 +13,10 @@
 
 Auth::routes();
 
+Route::get('cart', 'CartController@index');
+
+Route::get('cart/add/{id}', 'CartController@add');
+
 Route::resource('products','ProductController');
 
 Route::get('/shop', 'ProductController@shop')->name('shop');
@@ -21,4 +25,4 @@ Route::get('/profile', 'UserController@profile')->middleware('auth')->name('prof
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/cart', 'CartController@index')->name('cart.index');
+//Route::get('/cart', 'CartController@index')->name('cart.index');
