@@ -10,7 +10,7 @@
         <p class="product-description-show">{{ $product->description }}</p>
         <p class="product-material-show is-size-6"><b>Material:</b> {{ $product->material }}</p>
         <div id="add-to-cart-show" class="column is-full">
-          <a href="#" class="button is-white"> ADD TO CART</a>
+          <a href="{{ url('/cart/add')}}/{{$product->id}}" class="button is-white"> ADD TO CART</a>
         </div>
         <div id="buy-it-now-show" class="column is-full">
           <a href="#" class="button is-info"> BUY IT NOW</a>

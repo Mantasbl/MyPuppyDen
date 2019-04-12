@@ -21426,7 +21426,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   display: none;
 }
 
-#add-to-cart-show a {
+#add-to-cart-show a,
+#checkout-button {
   color: #209cee;
   border: 1px solid #209cee;
 }
@@ -21441,7 +21442,15 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   padding: 0.25rem;
 }
 
-#add-to-cart-display i {
-  font-size: 2rem;
+.cart-tax,
+.cart-labels,
+.cart-list {
+  border-bottom: 1px solid #bbbbb3;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+#cart-total {
+  justify-content: flex-end;
 }
 

@@ -16,7 +16,7 @@ class CartController extends Controller
     public function index()
     {
       $cart = Cart::content();
-      return view('cart.index', ['data' => $cart]);
+      return view('cart.index');
 
     }
 
@@ -28,66 +28,20 @@ class CartController extends Controller
     public function add($id)
     {
         $add_product = Product::find($id);
-        $add_to_cart = Cart::add(['id' => $add_product->id, 'name' => $add_product->name, 'qty' => 1, 'price' => $add_product->price]);
-
-        if($add_to_cart) {
-          return view('cart.index', [ 'data' => Cart::content()]);
-        }
+        $add_to_cart = Cart::add(['id' => $add_product->id, 'name' => $add_product->name, 'qty' => 1,
+        'price' => $add_product->price, 'options'=> ['image' => $add_product->image]]);
+          return view('cart.index');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function update(Request $request){
+      $qty = $request->newQty;
+      $rowId = $request->rowID;
+      Cart::update($rowId,$qty);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function remove($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+      Cart::remove($id);
+      return view('cart.index');
     }
 }

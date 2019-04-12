@@ -13,9 +13,11 @@
 
 Auth::routes();
 
-Route::get('cart', 'CartController@index');
+Route::get('/cart', 'CartController@index')->name('cart');
 
-Route::get('cart/add/{id}', 'CartController@add');
+Route::get('/cart/add/{id}', 'CartController@add')->name('cart_add');
+
+Route::get('/cart/remove/{id}', 'CartController@remove');
 
 Route::resource('products','ProductController');
 

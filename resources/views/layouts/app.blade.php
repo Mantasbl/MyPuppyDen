@@ -11,6 +11,7 @@
         <title>MyPuppyDen - {{ ucfirst(Route::current()->getName()) }}</title>
 
         <!-- Styles -->
+        <link rel="icon" href="/images/public_site_images/mypuppyden_logo.png">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
@@ -74,7 +75,7 @@
 
               <div class="navbar-end">
                 <div class="navbar-item">
-                  <a href="#"><i class=" cart fas fa-shopping-cart"></i></a>
+                  <a href="{{ route('cart')}}"><i class=" cart fas fa-shopping-cart"></i></a>
                 </div>
                 <div class="navbar-item logged-in-nav">
                   <div class="buttons">
