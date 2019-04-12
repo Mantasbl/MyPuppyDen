@@ -9,12 +9,13 @@
           <p class="product-description-index">{{ $product->description }}</p>
           <p class="product-material-index"><b>Material:</b> {{ $product->material }}</p>
           <p class="product-price-index is-size-5"><strike><?php $oldprice = $product->price * 1.35; echo (round($oldprice, 2)) ?> &#163;</strike> {{ $product->price  }} &#163;</p>
-          <a id = "add-to-cart-display" class="product-price-index is-size-5" href="{{ url('/cart/add')}}/{{$product->id}}"><i class=" cart fas fa-cart-plus"></i></a>
+          <a id = "add-to-cart-display" class="button is-white" href="{{ url('/cart/add')}}/{{$product->id}}">Add To Cart</i></a>
         </a>
 
           <!-- First we check if route is products.index as trying to use Auth middleware will cause an error on other pages where Auth is not used-->
           @if (Route::current()->getName() == "products.index")
           @if (Auth::user()->isAdmin !=0)
+          <br><br>
           <form action="{{ route('products.destroy',$product->id) }}" method="POST">
               <a class="button is-info" href="{{ route('products.edit',$product->id) }}">Edit</a>
               @csrf

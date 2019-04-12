@@ -14,6 +14,7 @@
         <link rel="icon" href="/images/public_site_images/mypuppyden_logo.png">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        @yield('head')
     </head>
     <body>
         <div id="app">
@@ -48,8 +49,10 @@
                         @endif
                 </a>
 
-
-
+                <a href="{{ route('cart')}}" class="navbar-item">
+                  Cart
+                </a>
+                <!--
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
                     FAQ
@@ -71,6 +74,7 @@
                     </a>
                   </div>
                 </div>
+              -->
               </div>
 
               <div class="navbar-end">

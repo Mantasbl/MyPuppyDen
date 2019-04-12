@@ -21427,7 +21427,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 }
 
 #add-to-cart-show a,
-#checkout-button {
+#checkout-button,
+#add-to-cart-display {
   color: #209cee;
   border: 1px solid #209cee;
 }
@@ -21440,6 +21441,10 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
 #add-to-cart-show,
 #buy-it-now-show {
   padding: 0.25rem;
+}
+
+#add-to-cart-display {
+  margin-top: 10px;
 }
 
 .cart-tax,

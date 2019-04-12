@@ -1,4 +1,4 @@
-#add-to-cart-show a, #checkout-button {
+#add-to-cart-show a, #checkout-button, #add-to-cart-display {
   color: #209cee;
   border: 1px solid #209cee;
 }
@@ -8,4 +8,8 @@
 
 #add-to-cart-show, #buy-it-now-show {
   padding: 0.25rem;
+}
+
+#add-to-cart-display {
+  margin-top: 10px;
 }

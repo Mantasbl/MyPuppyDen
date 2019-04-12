@@ -13,7 +13,7 @@
           <a href="{{ url('/cart/add')}}/{{$product->id}}" class="button is-white"> ADD TO CART</a>
         </div>
         <div id="buy-it-now-show" class="column is-full">
-          <a href="#" class="button is-info"> BUY IT NOW</a>
+          <a href="" onclick="alert('Whoaw slow down. Website is still in development, come back later')" class="button is-info"> BUY IT NOW</a>
         </div>
 
       </div>

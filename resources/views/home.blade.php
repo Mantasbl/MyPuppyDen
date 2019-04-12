@@ -11,7 +11,7 @@
             We pride ourselves for our expertise in taking care of pups and dogs.
             Browse our collection of carefully curated products that your dog will love
           </h2>
-          <a href="#" class="button is-info">Free Dog Collar</a>
+          <a href="{{route('shop')}}" class="button is-info">Browse our collection</a>
         </div>
       </div>
     </section>

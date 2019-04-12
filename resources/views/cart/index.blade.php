@@ -71,7 +71,7 @@
         <div class="row has-text-weight-bold">
           <p>Cart Total {{ Cart::total()}}</p>
         </div>
-        <a href="" id="checkout-button" onclick="alert('Website is currently in development and no orders are being taken.');" class="button is-white is-size-4">Checkout</a>
+        <a href="{{route ('cart')}}" id="checkout-button" onclick="alert('Website is currently in development and no orders are being taken.');" class="button is-white is-size-4">Checkout</a>
       </div>
   </div>
 </section>

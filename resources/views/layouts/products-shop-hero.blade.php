@@ -15,8 +15,11 @@
           Login
         @elseif (Route::current()->getName() == "register")
           Register
-        @elseif (Route::current()->getName() == "cart" || "add_cart")
+        @elseif (Route::current()->getName() == "profile")
+          Welcome {{$user->name}}
+        @elseif (Route::current()->getName() == "cart" || "cart/add")
           Shopping Cart
+
         @endif
 
       </h1>
