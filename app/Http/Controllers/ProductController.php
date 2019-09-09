@@ -93,7 +93,7 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
           $image = $request->file('image');
           $filename = time() . '.' . $image->getClientOriginalExtension();
-          Image::make($image)->/*resize(150,150)->*/save( public_path('/images/product_images/'. $filename));
+          Image::make($image)->resize(150,150)->save( public_path('/images/product_images/'. $filename));
           $product->image = $filename;
         }
         $product->save();
