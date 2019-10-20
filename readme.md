@@ -5,6 +5,7 @@
   1. Product CRUD with input verifications on both front and back-ends
   2. User authentication system with different types of permissions
   3. Image manipulation with PHP
+  4. Shopping cart tied to session storage
 
 # Available at
   https://mypuppyden.herokuapp.com
